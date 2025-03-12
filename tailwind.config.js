@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        blue: "#1835F5",
+        gray_500: "#78807F",
+        gray_600: "#484D4C"
       },
       screens: {
         sm: "576px",  // Matches `$screen-sm-min: 576px;`
