@@ -1,0 +1,443 @@
+@use 'base--variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  padding-left: $padding;
+  padding-right: $padding;
+  @include no-md {
+    padding-left: $padding-small;
+    padding-right: $padding-small;
+  }
+  @include sm {
+    max-width: 540px;
+  }
+  @include md {
+    max-width: 720px;
+  }
+  @include lg {
+    max-width: 960px;
+  }
+  @include xl {
+    max-width: 1140px;
+  }
+  @include xxl {
+    max-width: 1320px;
+  }
+}
+.container-fluid {
+  padding-left: $padding;
+  padding-right: $padding;
+  @include no-md {
+    padding-left: $padding-small;
+    padding-right: $padding-small;
+  }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: $row-margin;
+  margin-right: $row-margin;
+  @include no-md {
+    margin-left: $row-margin-small;
+    margin-right: $row-margin-small;
+  }
+}
+.row > * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-xl-1,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xxl-1,
+.col-xxl-2,
+.col-xxl-3,
+.col-xxl-4,
+.col-xxl-5,
+.col-xxl-6,
+.col-xxl-7,
+.col-xxl-8,
+.col-xxl-9,
+.col-xxl-10,
+.col-xxl-11,
+.col-xxl-12 {
+  padding-left: $padding;
+  padding-right: $padding;
+  flex: 0 0 auto;
+  @include no-md {
+    padding-left: $padding-small;
+    padding-right: $padding-small;
+  }
+}
+
+.col-1 {
+  width: 8.33333333%
+}
+
+.col-2 {
+  width: 16.66666667%
+}
+
+.col-3 {
+  width: 25%
+}
+
+.col-4 {
+  width: 33.33333333%
+}
+
+.col-5 {
+  width: 41.66666667%
+}
+
+.col-6 {
+  width: 50%
+}
+
+.col-7 {
+  width: 58.33333333%
+}
+
+.col-8 {
+  width: 66.66666667%
+}
+
+.col-9 {
+  width: 75%
+}
+
+.col-10 {
+  width: 83.33333333%
+}
+
+.col-11 {
+  width: 91.66666667%
+}
+
+.col-12 {
+  width: 100%
+}
+
+@include sm {
+  .col-sm-1 {
+    width: 8.33333333%
+  }
+
+  .col-sm-2 {
+    width: 16.66666667%
+  }
+
+  .col-sm-3 {
+    width: 25%
+  }
+
+  .col-sm-4 {
+    width: 33.33333333%
+  }
+
+  .col-sm-5 {
+    width: 41.66666667%
+  }
+
+  .col-sm-6 {
+    width: 50%
+  }
+
+  .col-sm-7 {
+    width: 58.33333333%
+  }
+
+  .col-sm-8 {
+    width: 66.66666667%
+  }
+
+  .col-sm-9 {
+    width: 75%
+  }
+
+  .col-sm-10 {
+    width: 83.33333333%
+  }
+
+  .col-sm-11 {
+    width: 91.66666667%
+  }
+
+  .col-sm-12 {
+    width: 100%
+  }
+}
+
+@include md {
+  .col-md-1 {
+    width: 8.33333333%
+  }
+
+  .col-md-2 {
+    width: 16.66666667%
+  }
+
+  .col-md-3 {
+    width: 25%
+  }
+
+  .col-md-4 {
+    width: 33.33333333%
+  }
+
+  .col-md-5 {
+    width: 41.66666667%
+  }
+
+  .col-md-6 {
+    width: 50%
+  }
+
+  .col-md-7 {
+    width: 58.33333333%
+  }
+
+  .col-md-8 {
+    width: 66.66666667%
+  }
+
+  .col-md-9 {
+    width: 75%
+  }
+
+  .col-md-10 {
+    width: 83.33333333%
+  }
+
+  .col-md-11 {
+    width: 91.66666667%
+  }
+
+  .col-md-12 {
+    width: 100%
+  }
+}
+
+@include lg {
+  .col-lg-1 {
+    width: 8.33333333%
+  }
+
+  .col-lg-2 {
+    width: 16.66666667%
+  }
+
+  .col-lg-3 {
+    width: 25%
+  }
+
+  .col-lg-4 {
+    width: 33.33333333%
+  }
+
+  .col-lg-5 {
+    width: 41.66666667%
+  }
+
+  .col-lg-6 {
+    width: 50%
+  }
+
+  .col-lg-7 {
+    width: 58.33333333%
+  }
+
+  .col-lg-8 {
+    width: 66.66666667%
+  }
+
+  .col-lg-9 {
+    width: 75%
+  }
+
+  .col-lg-10 {
+    width: 83.33333333%
+  }
+
+  .col-lg-11 {
+    width: 91.66666667%
+  }
+
+  .col-lg-12 {
+    width: 100%
+  }
+}
+
+@include xl {
+  .col-xl-1 {
+    width: 8.33333333%
+  }
+
+  .col-xl-2 {
+    width: 16.66666667%
+  }
+
+  .col-xl-3 {
+    width: 25%
+  }
+
+  .col-xl-4 {
+    width: 33.33333333%
+  }
+
+  .col-xl-5 {
+    width: 41.66666667%
+  }
+
+  .col-xl-6 {
+    width: 50%
+  }
+
+  .col-xl-7 {
+    width: 58.33333333%
+  }
+
+  .col-xl-8 {
+    width: 66.66666667%
+  }
+
+  .col-xl-9 {
+    width: 75%
+  }
+
+  .col-xl-10 {
+    width: 83.33333333%
+  }
+
+  .col-xl-11 {
+    width: 91.66666667%
+  }
+
+  .col-xl-12 {
+    width: 100%
+  }
+}
+
+@include xxl {
+  .col-xxl-1 {
+    width: 8.33333333%
+  }
+
+  .col-xxl-2 {
+    width: 16.66666667%
+  }
+
+  .col-xxl-3 {
+    width: 25%
+  }
+
+  .col-xxl-4 {
+    width: 33.33333333%
+  }
+
+  .col-xxl-5 {
+    width: 41.66666667%
+  }
+
+  .col-xxl-6 {
+    width: 50%
+  }
+
+  .col-xxl-7 {
+    width: 58.33333333%
+  }
+
+  .col-xxl-8 {
+    width: 66.66666667%
+  }
+
+  .col-xxl-9 {
+    width: 75%
+  }
+
+  .col-xxl-10 {
+    width: 83.33333333%
+  }
+
+  .col-xxl-11 {
+    width: 91.66666667%
+  }
+
+  .col-xxl-12 {
+    width: 100%
+  }
+}
