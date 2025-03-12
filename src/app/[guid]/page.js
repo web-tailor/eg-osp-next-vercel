@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import Order from "@/components/molecules/Order";
-import EventList from "@/components/molecules/lists/EventList";
+import Header from "@/components/organisms/Header";
+import Hero from "@/components/organisms/Hero";
+import PersonalCard from "@/components/molecules/cards/PersonalCard";
+import TicketCard from "@/components/molecules/cards/TicketCard";
+import EventList from "@/components/molecules/EventList";
 import EventDetails from "@/components/molecules/EventDetails";
-import IconLogo from "@/components/atoms/icons/IconLogo";
 import NotFound from "@/components/organisms/NotFound";
-import { fetchEvent } from "@/utils/fetchEvent"; // ✅ Import new fetchEvent function
+import { fetchEvent } from "@/utils/fetchEvent";
+
 
 export default function OrderDetailsPage() {
     const { guid } = useParams();
@@ -40,16 +43,24 @@ export default function OrderDetailsPage() {
     const event = eventData?.data?.[0] || null;
 
     return (
-        <div className="container">
-            <IconLogo/>
-            <h1 className="text-center text-[126px] font-extrabold leading-none bg-gradient-to-r from-[#1835F5] via-[#CDC5F2] to-[#CDC5F2] bg-clip-text text-transparent">
-                Order & Event Info
-            </h1>
+        <div>
 
+            <Header/>
 
-            {loading && <p>Loading order and event details...</p>}
+            {event && <Hero event={event}/> }
 
-            {order && <Order order={order}/>}
+            <section>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-7 col-12 mb-4 mb-lg-0">
+                            {order && <TicketCard order={order}/>}
+                        </div>
+                        <div className="col-lg-5 col-12">
+                            {order && <PersonalCard order={order}/>}
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {event && <EventList event={event}/>}
             {eventDetails && <EventDetails details={eventDetails}/>}

@@ -28,3 +28,10 @@
   font-weight: 900;
   font-style: normal;
 }
+@font-face {
+  font-family: "Francy";
+  src: url("/fonts/Francy.otf") format("opentype"),
+  url("/fonts/Francy.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
