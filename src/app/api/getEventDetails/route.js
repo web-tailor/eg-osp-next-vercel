@@ -6,7 +6,7 @@ export async function GET(request) {
         return Response.json({ error: "Slug is required" }, { status: 400 });
     }
 
-    const url = `https://api.event-go.nl/events/${slug}`;
+    const url = `https://api.event-go.nl/internal/events/${slug}`;
     const token = process.env.EVENT_API_TOKEN; // Use the secret token
 
     try {

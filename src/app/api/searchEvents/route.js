@@ -5,7 +5,7 @@ export async function POST(request) {
         return Response.json({ error: "Event ID is required" }, { status: 400 });
     }
 
-    const url = "https://api.event-go.nl/events/search";
+    const url = "https://api.event-go.nl/internal/events/search";
     const token = process.env.EVENT_API_TOKEN; // Keep it secret
 
     try {
