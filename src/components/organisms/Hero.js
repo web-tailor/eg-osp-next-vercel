@@ -1,5 +1,5 @@
-export default function Hero({ event }) {
-    if (!event) return (
+export default function Hero({ order }) {
+    if (!order) return (
         <section className="hero">
             <div className="container text-center">
                 <h2 className="mb-0 text-white">Get ready for</h2>
@@ -12,7 +12,7 @@ export default function Hero({ event }) {
         <section className="hero">
             <div className="container text-center">
                 <h2 className="mb-0 text-white">Get ready for</h2>
-                {event && <h1>{event.name}</h1>}
+                {order && <h1>{order.tickets[0].ticket.event.name}</h1>}
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams } from "next/navigation";
 import Header from "@/components/organisms/Header";
 import Hero from "@/components/organisms/Hero";
@@ -10,6 +10,7 @@ import EventList from "@/components/molecules/EventList";
 import EventDetails from "@/components/molecules/EventDetails";
 import NotFound from "@/components/organisms/NotFound";
 import { fetchEvent } from "@/utils/fetchEvent";
+import LoadingBar from "react-top-loading-bar";
 
 
 export default function OrderDetailsPage() {
@@ -19,11 +20,16 @@ export default function OrderDetailsPage() {
     const [eventDetails, setEventDetails] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const loadingBarRef = useRef(null);
 
     // ✅ Fetch event data on mount
     useEffect(() => {
         if (!guid) return;
-        fetchEvent(guid, setOrder, setEventData, setEventDetails, setError, setLoading);
+        loadingBarRef.current?.continuousStart(); // Start loading bar
+
+        fetchEvent(guid, setOrder, setEventData, setEventDetails, setError, setLoading).then(() => {
+            loadingBarRef.current?.complete(); // Complete loading bar when done
+        });
     }, [guid]);
 
     // ✅ Update metadata when eventData is updated
@@ -45,9 +51,11 @@ export default function OrderDetailsPage() {
     return (
         <div>
 
+            <LoadingBar ref={loadingBarRef} color="#1835F5" height={4} />
+
             <Header/>
 
-            {event && <Hero event={event}/> }
+            {order && <Hero order={order}/>}
 
             <section>
                 <div className="container">
@@ -64,6 +72,7 @@ export default function OrderDetailsPage() {
 
             {event && <EventList event={event}/>}
             {eventDetails && <EventDetails details={eventDetails}/>}
+
 
 
         </div>
