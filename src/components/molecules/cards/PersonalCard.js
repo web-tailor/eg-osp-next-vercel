@@ -15,7 +15,6 @@ export default function PersonalCard({ order }) {
                 <div className="text-gray_500 text-[16px]">E-mail</div>
                 <div className="font-extrabold">{order.email}</div>
             </div>
-            {/*<pre className="p-2 rounded">{JSON.stringify(order, null, 2)}</pre>*/}
         </div>
     );
 }

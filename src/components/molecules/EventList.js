@@ -17,6 +17,7 @@ export default function EventList({ event }) {
                         </div>
                     </div>
                 </div>
+                {/*<pre className="p-2 rounded text-white">{JSON.stringify(event, null, 2)}</pre>*/}
             </div>
         </section>
     );

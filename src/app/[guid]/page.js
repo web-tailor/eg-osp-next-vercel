@@ -2,16 +2,16 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "next/navigation";
+import { fetchEvent } from "@/utils/fetchEvent";
+import LoadingBar from "react-top-loading-bar";
+import NotFound from "@/components/organisms/NotFound";
 import Header from "@/components/organisms/Header";
 import Hero from "@/components/organisms/Hero";
 import PersonalCard from "@/components/molecules/cards/PersonalCard";
 import TicketCard from "@/components/molecules/cards/TicketCard";
 import EventList from "@/components/molecules/EventList";
 import EventDetails from "@/components/molecules/EventDetails";
-import NotFound from "@/components/organisms/NotFound";
-import { fetchEvent } from "@/utils/fetchEvent";
-import LoadingBar from "react-top-loading-bar";
-
+import SpotifyPlayer from '@/components/molecules/SpotifyPlayer';
 
 export default function OrderDetailsPage() {
     const { guid } = useParams();
@@ -51,7 +51,7 @@ export default function OrderDetailsPage() {
     return (
         <div>
 
-            <LoadingBar ref={loadingBarRef} color="#1835F5" height={4} />
+            <LoadingBar ref={loadingBarRef} color="#1835F5" height={4}/>
 
             <Header/>
 
@@ -70,9 +70,14 @@ export default function OrderDetailsPage() {
                 </div>
             </section>
 
+            <section>
+                <div className="container">
+                    {event && <SpotifyPlayer spotifyUri={event.spotify} />}
+                </div>
+            </section>
+
             {event && <EventList event={event}/>}
             {eventDetails && <EventDetails details={eventDetails}/>}
-
 
 
         </div>

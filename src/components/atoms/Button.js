@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 export default function Button({ children, variant = "default", size = "md", ...props }) {
     const baseClass = "inline-flex align-center rounded-full px-4 py-2 mt-3 font-600 text-uppercase focus:outline-none cursor-pointer";
     const variants = {
