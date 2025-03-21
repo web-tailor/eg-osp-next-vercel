@@ -13,6 +13,7 @@ import PaymentSummaryCard from '@/components/molecules/cards/PaymentSummaryCard'
 import EventList from "@/components/molecules/EventList";
 import EventDetails from "@/components/molecules/EventDetails";
 import SpotifyPlayer from '@/components/molecules/SpotifyPlayer';
+import CountDownCard from '@/components/molecules/cards/CountDownCard';
 
 export default function OrderDetailsPage() {
     const { guid } = useParams();
@@ -78,7 +79,7 @@ export default function OrderDetailsPage() {
                             {order && <PaymentSummaryCard order={order}/>}
                         </div>
                         <div className="col-lg-7 col-12">
-                            {order && <PersonalCard order={order}/>}
+                            {order && <CountDownCard order={order}/>}
                         </div>
                     </div>
                 </div>

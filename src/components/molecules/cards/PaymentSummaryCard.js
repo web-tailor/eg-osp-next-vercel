@@ -1,7 +1,7 @@
 export default function PaymentSummaryCard({ order }) {
     if (!order) return <p>Loading order...</p>;
     return (
-        <div className="card card--personal bg-tertiary-400">
+        <div className="card card--payment-summary bg-tertiary-400">
             <h2 className="text-primary-600">Payout summary</h2>
             <div className="text-primary-400 mb-lg">
                 {order.payments && order.payments.length > 0 ? (
