@@ -8,9 +8,33 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: "#1835F5",
-        gray_500: "#78807F",
-        gray_600: "#484D4C"
+        primary: {
+          100: "#E7EAFE",
+          300: "#A3AEFB",
+          400: "#465DF7",
+          500: "#304AF6",
+          600: "#1835F5",
+        },
+        secondary: {
+          600: "#DFECEB",
+        },
+        tertiary: {
+          400: "#CDC5F2",
+          600: "#C2B7EF",
+        },
+        neutral: {
+          100: "#ffffff",
+          500: "#78807F",
+          600: "#484D4C",
+          700: "#303333",
+          800: "#1D1D1D",
+          900: "#000000",
+        },
+      },
+      spacing: {
+        sm: '8px',
+        md: '12px',
+        lg: '24px',
       },
       screens: {
         sm: "576px",  // Matches `$screen-sm-min: 576px;`
