@@ -14,6 +14,7 @@ import EventList from "@/components/molecules/EventList";
 import EventDetails from "@/components/molecules/EventDetails";
 import SpotifyPlayer from '@/components/molecules/SpotifyPlayer';
 import CountDownCard from '@/components/molecules/cards/CountDownCard';
+import Footer from '@/components/organisms/Footer';
 
 export default function OrderDetailsPage() {
     const { guid } = useParams();
@@ -85,14 +86,19 @@ export default function OrderDetailsPage() {
                 </div>
             </section>
 
-            <section>
-                <div className="container">
-                    {event && <SpotifyPlayer spotifyUri={event.spotify}/>}
-                </div>
-            </section>
+            {event?.spotify && (
+                <section>
+                    <div className="container">
+                        <SpotifyPlayer spotifyUri={event.spotify} />
+                    </div>
+                </section>
+            )}
 
-            {event && <EventList event={event}/>}
-            {eventDetails && <EventDetails details={eventDetails}/>}
+
+           {/* {event && <EventList event={event}/>}
+            {eventDetails && <EventDetails details={eventDetails}/>}*/}
+
+            <Footer/>
 
 
         </div>
