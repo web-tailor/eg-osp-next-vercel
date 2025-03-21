@@ -10,9 +10,8 @@ export default function SpotifyPlayer({ spotifyUri }) {
 
         // ✅ Define the callback BEFORE loading the script
         window.onSpotifyIframeApiReady = (IFrameAPI) => {
-            console.log('Spotify API Ready');
             IFrameAPI.createController(embedRef.current, { uri: spotifyUri }, () => {
-                console.log('Spotify IFrame created');
+                //console.log('Spotify IFrame created');
             });
         };
 
@@ -27,7 +26,7 @@ export default function SpotifyPlayer({ spotifyUri }) {
             // If script already exists and Spotify already called the callback, manually create controller
             if (window.spotifyApi) {
                 window.spotifyApi.createController(embedRef.current, { uri: spotifyUri }, () => {
-                    console.log('Spotify IFrame created (from cached API)');
+                    //console.log('Spotify IFrame created (from cached API)');
                 });
             }
         }
