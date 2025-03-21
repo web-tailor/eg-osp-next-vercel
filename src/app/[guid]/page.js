@@ -7,8 +7,9 @@ import LoadingBar from "react-top-loading-bar";
 import NotFound from "@/components/organisms/NotFound";
 import Header from "@/components/organisms/Header";
 import Hero from "@/components/organisms/Hero";
-import PersonalCard from "@/components/molecules/cards/PersonalCard";
 import TicketCard from "@/components/molecules/cards/TicketCard";
+import PersonalCard from "@/components/molecules/cards/PersonalCard";
+import PaymentSummaryCard from '@/components/molecules/cards/PaymentSummaryCard';
 import EventList from "@/components/molecules/EventList";
 import EventDetails from "@/components/molecules/EventDetails";
 import SpotifyPlayer from '@/components/molecules/SpotifyPlayer';
@@ -60,7 +61,7 @@ export default function OrderDetailsPage() {
             <section>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-7 col-12 mb-4 mb-lg-0">
+                        <div className="col-lg-7 col-12 mb-lg lg:mb-0">
                             {order && <TicketCard order={order}/>}
                         </div>
                         <div className="col-lg-5 col-12">
@@ -72,7 +73,20 @@ export default function OrderDetailsPage() {
 
             <section>
                 <div className="container">
-                    {event && <SpotifyPlayer spotifyUri={event.spotify} />}
+                    <div className="row">
+                        <div className="col-lg-5 col-12 mb-lg lg:mb-0">
+                            {order && <PaymentSummaryCard order={order}/>}
+                        </div>
+                        <div className="col-lg-7 col-12">
+                            {order && <PersonalCard order={order}/>}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div className="container">
+                    {event && <SpotifyPlayer spotifyUri={event.spotify}/>}
                 </div>
             </section>
 

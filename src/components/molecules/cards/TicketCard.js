@@ -1,7 +1,7 @@
 export default function TicketCard({ order }) {
     if (!order) return <p>Loading order...</p>;
     return (
-        <div className="card card--personal bg-blue">
+        <div className="card card--personal bg-primary-600">
 
             <div>
                 <img src="https://quickchart.io/qr?text=<?php echo $ticket->ticket_number; ?>&size=250&margin=2"
