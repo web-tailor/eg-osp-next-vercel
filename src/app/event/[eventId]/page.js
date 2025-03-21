@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; // Get eventId from URL
-import EventList from "@/components/molecules/lists/EventList";
+import EventList from "@/components/molecules/EventList";
 import EventDetails from "@/components/molecules/EventDetails";
 import IconLogo from "@/components/atoms/icons/IconLogo";
 import NotFound from "@/components/organisms/NotFound";
