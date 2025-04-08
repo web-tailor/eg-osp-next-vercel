@@ -125,9 +125,6 @@ export default function OrderDetailsPage() {
                         </section>
                     )}
 
-                    {/* {event && <EventList event={event}/>}
-              {eventDetails && <EventDetails details={eventDetails}/>}*/}
-
                     <Footer/>
                 </div>
             )}
