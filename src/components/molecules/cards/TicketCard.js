@@ -13,7 +13,7 @@ export default function TicketCard({ order }) {
     const tickets = order.tickets;
 
     return (
-        <div className="card card--ticket bg-tertiary-400 text-white">
+        <div className="card card--ticket bg-primary-600 text-white">
             <div className="ticket-swiper-wrapper relative">
                 <Swiper
                     spaceBetween={24}
