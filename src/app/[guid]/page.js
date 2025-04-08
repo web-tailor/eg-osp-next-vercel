@@ -12,7 +12,7 @@ import TicketCard from "@/components/molecules/cards/TicketCard";
 import PersonalCard from "@/components/molecules/cards/PersonalCard";
 import PaymentSummaryCard from '@/components/molecules/cards/PaymentSummaryCard';
 import SpotifyPlayer from '@/components/molecules/SpotifyPlayer';
-import CountDownCard from '@/components/molecules/cards/CountDownCard';
+import CountDownCard from '@/components/molecules/cards/CountdownCard';
 import TextBlockTextCard from '@/components/molecules/cards/TextBlockTextCard';
 import TextBlockImageCard from '@/components/molecules/cards/TextBlockImageCard';
 import Footer from '@/components/organisms/Footer';
