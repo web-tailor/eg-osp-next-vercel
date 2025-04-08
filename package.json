@@ -1,6 +1,6 @@
 {
   "name": "osp-next",
-  "version": "0.1.0",
+  "version": "ru0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

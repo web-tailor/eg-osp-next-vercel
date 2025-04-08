@@ -12,20 +12,19 @@ body {
   font-size: 18px;
   line-height: 1.55;
   color: $neutral-800;
+  @include no-sm {
+    font-size: 16px;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: $font-h;
   line-height: 1.1;
 }
 
 h1 {
-  background: linear-gradient(90deg, #1835F5 0.01%, #CDC5F2 62.54%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1.89px;
   font-size: 126px;
+  letter-spacing: 1.89px;
   line-height: 1;
   display: inline-block;
   @include no-lg {
@@ -40,5 +39,16 @@ h2 {
   @include no-md {
     font-size: 30px;
   }
+}
+.gradient-text {
+  background: linear-gradient(90deg, #1835F5 0.01%, #CDC5F2 62.54%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.background-image {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
 

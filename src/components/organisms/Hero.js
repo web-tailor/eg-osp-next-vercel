@@ -3,7 +3,7 @@ export default function Hero({ order }) {
         <section className="hero">
             <div className="container text-center">
                 <h2 className="mb-0 text-white">Get ready for</h2>
-                <h1>...</h1>
+                <h1 className="gradient-text">...</h1>
             </div>
         </section>
     );
@@ -12,7 +12,7 @@ export default function Hero({ order }) {
         <section className="hero">
             <div className="container text-center">
                 <h2 className="mb-0 text-white">Get ready for</h2>
-                {order && <h1>{order.tickets[0].ticket.event.name}</h1>}
+                {order && <h1 className="gradient-text">{order.tickets[0].ticket.event.name}</h1>}
             </div>
         </section>
     );

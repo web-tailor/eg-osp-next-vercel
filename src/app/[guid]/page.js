@@ -5,20 +5,23 @@ import Header from "@/components/organisms/Header";
 import TicketCard from "@/components/molecules/cards/TicketCard";
 import PersonalCard from "@/components/molecules/cards/PersonalCard";
 import PaymentSummaryCard from "@/components/molecules/cards/PaymentSummaryCard";
-import CountDownCard from "@/components/molecules/cards/CountDownCard";
+import CountdownCard from "@/components/molecules/cards/CountdownCard";
 import SpotifyPlayer from "@/components/molecules/SpotifyPlayer";
 import Footer from "@/components/organisms/Footer";
+import TextBlockTextCard from '@/components/molecules/cards/TextBlockTextCard';
+import TextBlockImageCard from '@/components/molecules/cards/TextBlockImageCard';
 
-function getBaseUrl() {
-    const headersList = headers();
+async function getBaseUrl() {
+    const headersList = await headers(); // ✅ await now required
     const host = headersList.get("host");
     const protocol = host?.includes("localhost") ? "http" : "https";
     return `${protocol}://${host}`;
 }
 
+
 export default async function Page({ params }) {
-    const { guid } = params;
-    const baseUrl = getBaseUrl();
+    const { guid } = await params;
+    const baseUrl = await getBaseUrl();
 
     // 1️⃣ Fetch order
     const orderRes = await fetch(`${baseUrl}/api/getOrder?guid=${guid}`, {
@@ -56,18 +59,18 @@ export default async function Page({ params }) {
 
     return (
         <div>
-            <Header />
+            <Header event={event}/>
 
-            <Hero order={order} />
+            <Hero order={order}/>
 
             <section>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-7 col-12 mb-lg lg:mb-0">
-                            <TicketCard order={order} />
+                            <TicketCard order={order}/>
                         </div>
                         <div className="col-lg-5 col-12">
-                            <PersonalCard order={order} />
+                            <PersonalCard order={order}/>
                         </div>
                     </div>
                 </div>
@@ -77,10 +80,23 @@ export default async function Page({ params }) {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-5 col-12 mb-lg lg:mb-0">
-                            <PaymentSummaryCard order={order} />
+                            <PaymentSummaryCard order={order}/>
                         </div>
                         <div className="col-lg-7 col-12">
-                            <CountDownCard order={order} />
+                            <CountdownCard event={event}/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-7 col-12 mb-lg lg:mb-0">
+                            <TextBlockTextCard event={event}/>
+                        </div>
+                        <div className="col-lg-5 col-12">
+                            <TextBlockImageCard event={event}/>
                         </div>
                     </div>
                 </div>
@@ -89,12 +105,12 @@ export default async function Page({ params }) {
             {event?.spotify && (
                 <section>
                     <div className="container">
-                        <SpotifyPlayer spotifyUri={event.spotify} />
+                        <SpotifyPlayer spotifyUri={event.spotify}/>
                     </div>
                 </section>
             )}
 
-            <Footer />
+            <Footer/>
         </div>
     );
 }
