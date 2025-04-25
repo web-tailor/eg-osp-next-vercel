@@ -74,6 +74,19 @@
         }
       }
     }
+    .ticket-count {
+      line-height: 1;
+      font-weight: 800;
+      text-align: center;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $neutral-900;
+      color: $neutral-100;
+      font-size: 14px;
+      padding: 9px 16px;
+    }
   }
   &--countdown {
     min-height: 300px;
@@ -151,6 +164,10 @@
       }
     }
   }
+  &--map {
+    padding: 0;
+  }
+
   &--text-block-text {
     position: relative;
     padding-top: 268px;

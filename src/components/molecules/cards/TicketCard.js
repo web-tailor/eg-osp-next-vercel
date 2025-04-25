@@ -36,7 +36,7 @@ export default function TicketCard({ order }) {
 
                             <div className="row">
                                 <div className="col-sm-6 col-12">
-                                    <div className="button button--black button--small mb-md">
+                                    <div className="ticket-count mb-md">
                                         Ticket {i + 1} of {tickets.length}
                                     </div>
                                 </div>

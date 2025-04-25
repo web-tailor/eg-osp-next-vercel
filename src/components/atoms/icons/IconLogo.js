@@ -1,6 +1,6 @@
 export default function IconLogo() {
     return (
-        <svg className="w-16 h-12 group" width="64" height="50" viewBox="0 0 64 50" fill="none"
+        <svg className="w-11 h-8 sm:w-16 sm:h-12 group" width="64" height="50" viewBox="0 0 64 50" fill="none"
              xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="hoverGradient" x1="0%" y1="50%" x2="100%" y2="50%">

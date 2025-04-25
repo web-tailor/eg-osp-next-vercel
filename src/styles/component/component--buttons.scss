@@ -9,6 +9,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
   &--black {
     background-color: $neutral-900;
@@ -27,7 +29,6 @@
   }
 }
 a.button {
-  transition: all 0.4s ease;
   &:hover, &:focus {
     opacity: 0.8;
   }
